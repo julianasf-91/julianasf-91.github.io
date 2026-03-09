@@ -7,6 +7,7 @@
   <meta name="description" content="Portfólio de Juliana Ferreira — Data Science, Engenharia de Dados e IA." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -371,6 +372,25 @@
       padding-top: 24px;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      gap: 25px;
+      max-width: 500px;
+      margin-top: 25px;
+    }
+
+    .skills-grid i {
+      font-size: 40px;
+      color: var(--text-soft);
+      transition: 0.25s;
+    }
+
+    .skills-grid i:hover {
+      color: var(--accent);
+      transform: scale(1.15);
+    }
+
     @media (max-width: 980px) {
       .layout {
         grid-template-columns: 1fr;
@@ -442,6 +462,7 @@
             <a href="#about" class="active">Sobre</a>
             <a href="#experience">Experiência</a>
             <a href="#projects">Projetos</a>
+            <a href="#skills">Habilidades</a>
             <a href="#contact">Contato</a>
           </nav>
         </div>
@@ -692,6 +713,29 @@
               </div>
             </article>
 
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2 class="section-title">Habilidades</h2>
+
+          <div class="skills-grid">
+
+            <i class="devicon-python-plain"></i>
+            <i class="devicon-azuresqldatabase-plain"></i>
+            <i class="devicon-javascript-plain"></i>
+            <i class="devicon-cplusplus-plain"></i>
+            <i class="devicon-pandas-plain"></i>
+            <i class="devicon-scikitlearn-plain"></i>
+            <i class="devicon-azure-plain"></i>
+            <i class="devicon-azuredevops-plain"></i>
+            <i class="devicon-git-plain"></i>
+            <i class="devicon-github-original"></i>
+            <i class="devicon-vscode-plain"></i>
+            <i class="devicon-html5-plain"></i>
+            <i class="devicon-css3-plain"></i>
+            <i class="devicon-arduino-plain"></i>
+        
           </div>
         </section>
 
