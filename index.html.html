@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juliana Ferreira | Portfólio</title>
+  <meta name="description" content="Portfólio de Juliana Ferreira — Data Science, Engenharia de Dados e IA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a192f;
+      --bg-soft: #112240;
+      --bg-card: rgba(17, 34, 64, 0.7);
+      --text: #ccd6f6;
+      --text-soft: #8892b0;
+      --title: #e6f1ff;
+      --accent: #64ffda;
+      --border: rgba(100, 255, 218, 0.14);
+      --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(100, 255, 218, 0.08), transparent 28%),
+        linear-gradient(180deg, #08111f 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      width: min(100%, var(--max-width));
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 56px;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 72px 0 40px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      color: var(--title);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .headline {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--title);
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      max-width: 320px;
+      color: var(--text-soft);
+      margin-bottom: 28px;
+    }
+
+    .hero-photo {
+      width: 172px;
+      height: 172px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.18), rgba(17, 34, 64, 0.9));
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 15px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+      width: fit-content;
+    }
+
+    .nav a::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--text-soft);
+      transition: 0.25s ease;
+      opacity: 0.8;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--title);
+      transform: translateX(4px);
+    }
+
+    .nav a:hover::before,
+    .nav a.active::before {
+      width: 68px;
+      background: var(--accent);
+      opacity: 1;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .socials a {
+      color: var(--text-soft);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .socials a:hover {
+      color: var(--accent);
+      border-color: rgba(100, 255, 218, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .content {
+      padding: 72px 0 96px;
+    }
+
+    section {
+      padding: 32px 0 72px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-title {
+      display: inline-block;
+      color: var(--title);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 50%;
+      width: 72px;
+      height: 1px;
+      background: rgba(136, 146, 176, 0.45);
+    }
+
+    .lead {
+      color: var(--text-soft);
+      font-size: 1.03rem;
+      margin-bottom: 18px;
+      max-width: 720px;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
+      padding: 22px;
+      background: var(--bg-card);
+      border: 1px solid transparent;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+
+    .card-date {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+    }
+
+    .card h3 {
+      color: var(--title);
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      background: rgba(100, 255, 218, 0.08);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid rgba(100, 255, 218, 0.12);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .project-card {
+      padding: 24px;
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      min-height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border);
+    }
+
+    .project-card h3 {
+      color: var(--title);
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .project-card p {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .project-links a,
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(100, 255, 218, 0.24);
+      color: var(--accent);
+      transition: 0.25s ease;
+      font-weight: 600;
+    }
+
+    .project-links a:hover,
+    .cta:hover {
+      transform: translateY(-2px);
+      background: rgba(100, 255, 218, 0.06);
+    }
+
+    .contact-box {
+      padding: 28px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(17, 34, 64, 0.82), rgba(10, 25, 47, 0.96));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      color: var(--text-soft);
+      max-width: 650px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+      padding-top: 24px;
+    }
+
+    @media (max-width: 980px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: 48px 0 8px;
+      }
+
+      .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .nav a::before {
+        display: none;
+      }
+
+      .content {
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 0 18px;
+      }
+
+      .card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-photo {
+        width: 136px;
+        height: 136px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Portfólio</p>
+          <h1>Juliana Ferreira</h1>
+          <p class="headline">AI Engineer</p>
+
+          <div class="hero-photo">
+            <img src="./assets/juliana.jpg" alt="Foto de Juliana Ferreira" />
+          </div>
+
+          <p class="intro">
+            Desenvolvo soluções, conectando negócio, dados e tecnologia para gerar impacto de ponta a ponta.
+          </p>
+
+          <nav class="nav">
+            <a href="#about" class="active">Sobre</a>
+            <a href="#experience">Experiência</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+          </nav>
+        </div>
+
+        <div>
+          <div class="socials">
+            <a href="https://github.com/julianasf-91" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/juliana-sferreira/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:juliana.sf20@gmail.com">E-mail</a>
+            <a href="./assets/cv-juliana-ferreira.pdf" target="_blank" rel="noreferrer">CV</a>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="about">
+          <h2 class="section-title">Sobre</h2>
+          <p class="lead">
+            Sou uma profissional com experiência em <span class="highlight">BI, chatbots, APIs em Python, RPA e integração com sistemas corporativos</span>, hoje direcionando minha carreira para <span class="highlight">Ciência de Dados e Engenharia de Dados</span>.
+          </p>
+          <p class="lead">
+            Ao longo da minha trajetória, atuei desde o entendimento das regras de negócio até arquitetura, desenvolvimento, treinamento de usuários e sustentação. Gosto especialmente de projetos que combinam <span class="highlight">dados não estruturados, NLP, agentes de IA e observabilidade</span>.
+          </p>
+          <p class="lead">
+            Atualmente, concentro meus estudos e projetos em soluções aplicadas de <span class="highlight">Machine Learning, LLMs, RAG e pipelines de dados</span>, sempre com foco em casos concretos e valor para o negócio.
+          </p>
+        </section>
+
+        <section id="experience">
+          <h2 class="section-title">Experiência</h2>
+          <div class="card-list">
+
+            <article class="card">
+              <div class="card-date">2024 — Atual</div>
+              <div>
+                <h3>Migração estratégica para Data Science e Engenharia de Dados</h3>
+                <p>
+                  Consolidação de uma transição de carreira com foco em Machine Learning, NLP, LLMs, AI Agents, observabilidade e processamento de documentos, apoiada por pós-graduação e projetos práticos.
+                </p>
+                <div class="tags">
+                  <span class="tag">Machine Learning</span>
+                  <span class="tag">NLP</span>
+                  <span class="tag">RAG</span>
+                  <span class="tag">LLMs</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-date">2021 — 2023</div>
+              <div>
+                <h3>Desenvolvimento de soluções de dados, automação e chatbots</h3>
+                <p>
+                  Atuação ponta a ponta em projetos corporativos: levantamento de requisitos, definição técnica, desenvolvimento de APIs, automações, integrações com ServiceNow, painéis de BI e sustentação de aplicações.
+                </p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">APIs</span>
+                  <span class="tag">Chatbots</span>
+                  <span class="tag">BI</span>
+                  <span class="tag">RPA</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-date">Destaques</div>
+              <div>
+                <h3>Entrega de soluções com visão de negócio</h3>
+                <p>
+                  Experiência construindo soluções aplicadas para contexto empresarial, conectando problema de negócio, dados, automação e operação. Também atuei no treinamento de equipe para sustentação das aplicações.
+                </p>
+                <div class="tags">
+                  <span class="tag">Negócio</span>
+                  <span class="tag">Arquitetura</span>
+                  <span class="tag">Treinamento</span>
+                  <span class="tag">Sustentação</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2 class="section-title">Projetos</h2>
+          <div class="project-grid">
+
+            <article class="project-card">
+              <div class="card-photo">
+                <img src="./assets/ml_mama.jpg" alt="Detecção de câncer de mama com Machine Learning" />
+              </div>
+
+              <h3>Detecção de câncer de mama com Machine Learning</h3>
+              <p>
+                Desenvolvimento de um modelo de classificação utilizando regressão logística para prever a 
+                presença de câncer de mama a partir de dados clínicos. O projeto explora análise exploratória, 
+                seleção de features e avaliação de desempenho para identificar padrões relevantes nos dados.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Logistic Regression</span>
+                <span class="tag">Scikit-learn</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/julianasf-91/breast-cancer-logistic-regression" target="_blank">Código</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="card-photo">
+                <img src="./assets/wp_pncp.png" alt="Base de dados de contratos públicos" />
+              </div>
+
+              <h3>Base de dados de contratos públicos com Web Scraping</h3>
+              <p>
+                Coleta estruturada de contratos públicos em PDF para formação de uma base confiável de dados, com foco em análise, exploração e uso em soluções inteligentes de busca e extração.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Web Scraping</span>
+                <span class="tag">Selenium</span>
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Requests</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7432363881655619584/" target="_blank" rel="noreferrer">Veja mais</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="card-photo">
+                <img src="./assets/llm_fiscal.jpg" alt="FusionAI — Chat Fiscal com LangChain" />
+              </div>
+              <h3>FusionAI — Chat Fiscal com LangChain</h3>
+              <p>
+                Agente de IA capaz de responder perguntas em linguagem natural sobre notas fiscais.
+                O sistema processa arquivos compactados com pandas, armazena os dados em Parquet no Azure
+                Blob Storage e utiliza um agente LangChain com GPT-4.1-nano para interpretar consultas e
+                executar análises sobre os dados fiscais.
+              </p>
+
+              <div class="tags">
+                <span class="tag">LangChain</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">Azure Functions</span>
+                <span class="tag">Azure Blob</span>
+                <span class="tag">Streamlit</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/julianasf-91/fusionAI" target="_blank">
+                  Código
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="card-photo">
+                <img src="./assets/llm_bfa.png" alt="BFA + AI Agent + Observabilidade" />
+              </div>
+
+              <h3>BFA + AI Agent + Observabilidade</h3>
+              <p>
+                Desenvolvimento de uma arquitetura minimalista de agente baseada em LLM projetada para cenários corporativos. 
+                O sistema implementa um workflow estruturado de planejamento e execução, permitindo que o agente interprete 
+                solicitações, recupere contexto relevante via RAG e execute múltiplos passos de decisão. A solução também 
+                inclui observabilidade de chamadas, rastreabilidade de execução e arquitetura preparada para evolução em 
+                ambientes de produção.
+              </p>
+
+              <div class="tags">
+                <span class="tag">LLM Agents</span>
+                <span class="tag">RAG</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Agent Workflow</span>
+                <span class="tag">Observability</span>
+                <span class="tag">AI Architecture</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/julianasf-91/minimal_llm_agent_architecture" target="_blank">
+                  Código
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="card-photo" style="background-color: white;">
+                <img src="./assets/arq_chatbot.png" alt="Arquitetura de Consultor Virtual empresarial" />
+              </div>
+              <h3>Arquitetura de Consultor Virtual empresarial</h3>
+              <p>
+                Arquitetura de assistente corporativo integrado ao Microsoft Teams para consulta a documentos
+                e dados operacionais. A solução utiliza Copilot Studio e Power Automate para orquestração do
+                fluxo conversacional, integra fontes como SharePoint e APIs corporativas e utiliza o Genie da
+                Databricks para geração de respostas com IA.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Azure</span>
+                <span class="tag">Databricks Genie</span>
+                <span class="tag">Power Platform</span>
+                <span class="tag">Copilot Studio</span>
+                <span class="tag">Power Automate</span>
+                <span class="tag">Dataverse</span>
+                <span class="tag">SQL Database</span>
+                <span class="tag">Power BI</span>
+              </div>
+
+              <div class="project-links">
+                <a href="assets\arq_chatbot.png" target="_blank">Arquitetura</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="card-photo" style="background-color: white;">
+                <img src="./assets/ppl_data.png" alt="Foto de Juliana Ferreira" />
+              </div>
+              <h3>Pipeline de Engenharia de Dados</h3>
+              <p>
+                Construção de um pipeline de engenharia de dados baseado na arquitetura Lakehouse
+                (Bronze, Silver e Gold) para transformar dados brutos de vendas em um modelo
+                analítico otimizado. O projeto inclui limpeza e normalização de dados, criação
+                de datasets intermediários em Parquet e implementação de um modelo dimensional
+                Star Schema com tabela fato particionada por data para otimização de consultas.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Data Engineering</span>
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Parquet</span>
+                <span class="tag">PyArrow</span>
+                <span class="tag">Data Lakehouse</span>
+                <span class="tag">Star Schema</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/julianasf-91/data-lakehouse-data-engineering-pipeline" target="_blank">
+                  Código
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="section-title">Contato</h2>
+          <div class="contact-box">
+            <p>
+              Estou construindo minha transição e consolidação em Data Science, IA e Engenharia de Dados por meio de projetos práticos, aprendizado contínuo e foco em problemas reais. Se você tem um projeto interessante, uma oportunidade ou apenas quer trocar ideias sobre tecnologia, dados e IA, adoraria conversar!
+            </p>
+            <a class="cta" href="https://wa.me/5511960166484" target="_blank">Vamos conversar</a>
+          </div>
+          <footer>
+            &copy; 2026 Juliana Ferreira. Todos os direitos reservados.
+          </footer>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a');
+
+    const activateLink = () => {
+      let current = 'about';
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      const pageBottom = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (docHeight - pageBottom < 80) {
+        current = 'contact';
+      } else {
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute('id');
+          }
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    };
+
+    window.addEventListener('scroll', activateLink);
+    window.addEventListener('resize', activateLink);
+    activateLink();
+  </script>
+</body>
+</html>
